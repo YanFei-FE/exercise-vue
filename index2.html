@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>todolist</title>
+</head>
+<body>
+	<div id="sc">
+		<input type="button" name="" @click="show()" value="anniu">
+	</div>
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript" src="vue-resource.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			var app = new Vue({
+				el : "#sc",
+				methods:{
+					show: function(){
+						this.$http.get('a.text').then(function(res){
+							console.log(res.data);
+						});
+					}
+				}
+			});
+		}
+	</script>
+</body>
+</html>

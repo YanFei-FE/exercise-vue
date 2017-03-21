@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue</title>
+</head>
+<body>
+	<div id="sc">
+		<input type="text" name="" v-model="aa" :value="aa" @keyup.esc="show2">
+		<span @click="show()">{{aa}}</span>
+		<span @click="show()">{{aa}}</span>
+		<span @click="showq($event)">aaaaaaaa</span>
+		<ul>
+			<li v-for="(h, index) in arr">{{h}} {{index+1}}</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			var app = new Vue({
+				el : "#sc",
+				data: {
+					aa : '阿斯达',
+					arr : ['qwqw', 'wqweqeqeq', 'wqeqwe']
+				},
+				methods:{
+					show: function(){
+						this.arr.push('aaaa');
+					},
+					showq: function(ev){
+						console.log(ev);
+					},
+					show2: function(ev){
+						alert(1);
+					}
+				}
+			});
+		}
+	</script>
+</body>
+</html>
